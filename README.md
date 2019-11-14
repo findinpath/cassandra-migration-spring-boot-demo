@@ -3,9 +3,13 @@ Demo for Cassandra schema migrations on application startup
 
 This proof of concept application shows how to perform Cassandra database schema
 migrations on application startup.
-As already accustomed in the relational database world, where [flyway](https://flywaydb.org/)
-is extensively used for such purposes, there is no standard tool at the moment for performing 
-this job in the Cassandra world.
+In the relational database world,  [flyway](https://flywaydb.org/)
+is extensively used for such purposes. On the other hand, there is no 
+standard tool at the moment for performing this job in the Cassandra world.
+
+This often leads to runtime problems (e.g.: table not found) in the applications 
+that use Cassandra to store their data, because during the deployment the engineering team
+forgot to execute manually the schema migrations on the Cassandra database.
 
 This demo makes use of the [cassandra-migration](https://github.com/patka/cassandra-migration)
 library and integrates it into a [spring-boot](https://spring.io/projects/spring-boot) application
