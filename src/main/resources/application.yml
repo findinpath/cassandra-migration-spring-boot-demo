@@ -1,0 +1,17 @@
+logging:
+  level:
+    root: INFO
+    com.datastax.driver.core.QueryLogger.NORMAL: info
+
+cassandra:
+  contact:
+    points: 127.0.0.1
+  application:
+    keyspaceName: demo
+    username: demo_user
+    password: notsoeasy
+  migration:
+    keyspaceName: demo
+    scriptLocation: cassandra/migration
+    username: demo_migration
+    password: rollingstones
